@@ -1,0 +1,259 @@
+// VARIABLES
+
+$default: #333333;
+$light-text: #a5a4a4;
+$primary-color: #ed1111;
+$primary-shade: #ed8e8e;
+$gray-100: #efeeee;
+$gray-200: #edebeb;
+$gray-300: #d9d9d9;
+$gray-400: #999e9f;
+$border-color: #e5e5e5;
+
+// FONTS
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500|Ubuntu:300,400,500,700');
+
+$font-raleway: 'Raleway', sans-serif;
+$font-ubuntu: 'Ubuntu', sans-serif;
+
+// GENERAL
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: $gray-100;
+  font-family: $font-ubuntu;
+  font-size: 1.1rem;
+  color: $default;
+}
+
+img, a, button, .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+ul.basic, ul.ic-list, p {
+  color: $light-text;
+}
+
+ul.basic, ul.ic-list {
+  margin: 1rem 0;
+}
+
+ul.basic li {
+  position: relative;
+  + li {
+    margin-top: 1rem;
+  }
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: $primary-color;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+  }
+}
+
+ul.basic li {
+  padding-left: 1.5rem;
+  &:before {
+    font-size: 1.3rem;
+    content: "\f0da";
+  }
+}
+
+ul.ic-list li {
+  white-space: nowrap;
+  padding-right: 2rem;
+  + li {
+    margin-top: 1rem;
+  }
+  i[class*="fa"] {
+    font-size: 2.8rem;
+    color: $primary-color;
+    min-width: 4rem;
+  }
+  i[class*="fa"],
+  span {
+    white-space: normal;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  i[class*="phone"]:before {
+    display: inline-block;
+    transform: rotate(100deg);
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a, a:link {
+  text-decoration: none;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-family: $font-raleway;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0;
+  line-height: 4rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 500;
+  border: 1px solid $border-color;
+  min-width: 118px;
+  &.btn-premium {
+    background: #fff;
+    color: $primary-color;
+    &:hover {
+      background: $primary-shade;
+    }
+  }
+  &.btn-secondary {
+    color: $gray-400;
+    background: $gray-300;
+  }
+}
+
+.main-wrapper {
+  background: #fff;
+  border-left: 1px solid $gray-200;
+  border-right: 1px solid $gray-200;
+  padding: 3rem 4rem;
+}
+
+.product-list {
+  margin: 2rem 0;
+  .product {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+    margin: 0 0 5rem;
+    width: 270px;
+    padding: 1rem;
+    border: 1px solid $border-color;
+    &:hover {
+      box-shadow: 0px 0px 7px rgba(0,0,0,0.35);
+    }
+    .btn-area {
+      margin: 1rem 0 0;
+      padding: 0;
+    }
+    h4 {
+      font-size: 1.4rem;
+      margin: 0 0 1rem;
+    }
+    .label-new,
+    .label-sale {
+      line-height: 4rem;
+      text-transform: uppercase;
+      min-width: 70px;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #fff;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      margin-top: -2rem;
+    }
+    .label-new {
+      background: $primary-color;
+      left: 0;
+    }
+    .label-sale {
+      background: $default;
+      right: 0;
+    }
+  }
+  .product-info,
+  .product-img img {
+    padding: 0;
+  }
+  .product-img {
+    position: relative;
+    background: #fff;
+    border: 1px solid $border-color;
+    margin: -3rem 0 2rem;
+    text-align: center;
+    height: 250px;
+    padding: 1rem;
+  }
+  .price-new, .price-old {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .price-new {
+    font-size: 2.5rem;
+    margin-right: 2rem;
+  }
+  .price-old {
+    font-size: 1.7rem;
+    text-decoration: line-through;
+    color: $primary-color;
+  }
+}
+
+.action-area {
+  text-align: center;
+}
+
+.footer {
+  padding: 4rem 0;
+  .f-block {
+    padding: 4rem 2rem;
+    border: 1px solid $border-color;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1380px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .main-wrapper {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer > div + div {
+    margin-top: 2rem;
+  }
+}
