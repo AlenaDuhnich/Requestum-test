@@ -19,7 +19,7 @@
         <?php foreach (getItems(1, 4) as $item): ?>
             <li class="product col-auto row">
             	<div class="product-info col-12">
-                <a href="/" class="product-img row align-items-center">
+                <a href="/" class="product-img row justify-content-center align-items-center">
                 	<img class="col-auto" src="<?php echo $item['img']; ?>" alt="<?php echo $item['title']; ?>">
                 	<?php if ($item['discountCost'] !== null): ?>
 						<span class="label-sale">Sale</span>

@@ -21,7 +21,7 @@ export default class Product {
     render() {
         const template = `<li class="product col-auto row">
                 <div class="product-info col-12">
-                <a href="/" class="product-img row align-items-center">
+                <a href="/" class="product-img row justify-content-center align-items-center">
                 <img class="col-auto" src="${this.img}" alt="${this.title}">
                 <span class="label-sale">Sale</span>
                 <span class="label-new">New</span>
